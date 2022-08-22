@@ -1,0 +1,11 @@
+xdebug.idekey = PHPSTORM
+xdebug.client_host = host.docker.internal
+xdebug.mode = debug
+xdebug.start_with_request = yes
+xdebug.remote_connect_back = off
+xdebug.remote_handler = dbgp
+xdebug.output_dir = /var/www/html
+xdebug.dump_globals = on
+xdebug.dump.SERVER = REQUEST_URI
+xdebug.show_local_vars = on
+xdebug.cli_color = 1

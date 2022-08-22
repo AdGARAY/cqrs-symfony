@@ -1,0 +1,21 @@
+App\EmailSender\Domain\Email:
+  type: entity
+  table: email_message
+  id:
+    id:
+      type: App\EmailSender\Infrastructure\Orm\EmailIdType
+      generator:
+        strategy: SEQUENCE
+  fields:
+    status:
+      type: App\EmailSender\Infrastructure\Orm\EmailMessageStatusType
+  embedded:
+    sender:
+      class: App\EmailSender\Domain\EmailAddress
+      columnPrefix: sender_
+    addressee:
+      class: App\EmailSender\Domain\EmailAddress
+      columnPrefix: addressee_
+    message:
+      class: App\EmailSender\Domain\Message
+      columnPrefix: false

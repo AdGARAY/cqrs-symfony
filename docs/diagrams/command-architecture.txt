@@ -1,0 +1,15 @@
+@startuml
+interface Command
+interface CommandBus {
+    + dispatch(Command $command) : void
+}
+interface CommandHandler
+class InMemoryCommandBus implements CommandBus {
+    - MessageBus bus
+    + dispatch(Command $command) : void
+}
+
+Command <-right- InMemoryCommandBus::dispatch
+
+InMemoryCommandBus::bus -right-* CommandHandler
+@enduml

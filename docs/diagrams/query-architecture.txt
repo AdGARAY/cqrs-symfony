@@ -1,0 +1,19 @@
+@startuml
+interface Query
+interface Response
+interface QueryBus {
+    + ask(Query $query) : Response|null
+}
+interface QueryHandler {
+}
+class InMemoryQueryBus implements QueryBus {
+    - MessageBus bus
+    + ask(Query $query) : Response|null
+}
+
+Query <- InMemoryQueryBus::ask
+
+InMemoryQueryBus::bus -* QueryHandler
+
+QueryHandler::__invoke -> Response
+@enduml

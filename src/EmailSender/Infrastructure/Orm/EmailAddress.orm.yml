@@ -1,0 +1,4 @@
+App\EmailSender\Domain\EmailAddress:
+  type: embeddable
+  fields:
+    email: { type: string }

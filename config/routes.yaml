@@ -1,0 +1,18 @@
+create_email:
+    path: /emails
+    methods: POST
+    controller: App\EmailSender\Infrastructure\Http\CreateEmailAction
+
+get_email:
+    path: /emails/{id}
+    methods: GET
+    controller: App\EmailSender\Infrastructure\Http\GetEmailAction
+
+get_all_emails:
+    path: /emails
+    methods: GET
+    controller: App\EmailSender\Infrastructure\Http\GetEmailsAction
+
+kernel:
+    resource: ../src/Kernel.php
+    type: annotation

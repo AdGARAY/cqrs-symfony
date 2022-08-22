@@ -1,0 +1,4 @@
+App\EmailSender\Domain\Message:
+  type: embeddable
+  fields:
+    message: { type: string }
